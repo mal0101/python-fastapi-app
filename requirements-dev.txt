@@ -3,3 +3,5 @@ pytest-cov>=6.2
 ruff>=0.12
 mypy>=1.17
 httpx>=0.28
+pytest-cov
+httpx2
