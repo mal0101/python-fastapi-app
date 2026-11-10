@@ -19,7 +19,7 @@ jobs:
       - name: Vérifier le style
         run: ruff check .
       - name: Installer les dépendances
-        run: pip install -r requirements.txt -r requirements-dev.txt
+        run: pip install fastapi pydantic -r requirements-dev.txt
 
   build:
     name: Build – Vérifier l’application
@@ -38,7 +38,7 @@ jobs:
       - name: Importer l’application
         run: python -c "from app.main import app; print(app.title)"
       - name: Installer les dépendances
-        run: pip install -r requirements.txt -r requirements-dev.txt
+        run: pip install fastapi pydantic -r requirements-dev.txt
   test:
     name: Test – Pytest
     needs: [ lint, build ]
@@ -65,4 +65,4 @@ jobs:
       - name: Exécuter Pytest
         run: pytest
       - name: Installer les dépendances
-        run: pip install -r requirements.txt -r requirements-dev.txt
+        run: pip install fastapi pydantic -r requirements-dev.txt
